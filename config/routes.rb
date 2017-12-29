@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :form
+  root 'forms#index'
+  resources :forms
 end
