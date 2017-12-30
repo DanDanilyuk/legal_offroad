@@ -1,2 +1,87 @@
-<h1>testing</h1>
-<%= link_to 'New Form', new_form_path %>
+<div id='index-banner' class='parallax-container'>
+  <div class='section no-pad-bot'>
+    <div class='container'>
+      <br><br>
+      <h1 class='header center teal-text text-lighten-2'>Register Your Bike</h1>
+      <div class='row center'>
+        <h5 class='header col s12 light'>Fill out a simple form to get a street legal dirtbike or atv title.</h5>
+      </div>
+      <div class='row center'>
+        <%= link_to 'Get Started', create_path, class: 'btn-large waves-effect waves-light teal lighten-1', id: 'download-button'  %>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div class='parallax'><%= image_tag 'background1.jpg', alt: 'Unsplashed background img 1' %></div>
+</div>
+
+<div class='container'>
+  <div class='section'>
+    <div class='row'>
+
+      <div class='col s12 m4'>
+        <div class='icon-block'>
+          <h2 class='center brown-text'><i class='material-icons'>mode_edit</i></h2>
+          <h5 class='center'>Fill Out Form</h5>
+          <p class='light center'>Fill out the form and a PDF will be generated and downloaded. Follow additional instructions to complete required paperwork.</p>
+        </div>
+      </div>
+
+      <div class='col s12 m4'>
+        <div class='icon-block'>
+          <h2 class='center brown-text'><i class='material-icons'>send</i></h2>
+          <h5 class='center'>Send Forms</h5>
+          <p class='light center'>Send out forms to address on pdf. You should get a call/email in a few days when your order is ready for payment.</p>
+        </div>
+      </div>
+
+      <div class='col s12 m4'>
+        <div class='icon-block'>
+          <h2 class='center brown-text'><i class='material-icons'>cake</i></h2>
+          <h5 class='center'>Receive Title/Plates</h5>
+          <p class='light center'>Receive plates 5-7 days after payment. Title will come 3-4 weeks after payment. You can then transfer the title to your state or just bike registered where in SD.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class='parallax-container valign-wrapper'>
+  <div class='section no-pad-bot'>
+    <div class='container'>
+      <div class='row center'>
+        <h1 class='header col s12 light'>Adventure is Out There</h1>
+        <h4 class='header col s12 light'>“Oh the places you’ll go.” - ƒfar Seuss</h4>
+      </div>
+    </div>
+  </div>
+  <div class='parallax'><%= image_tag 'background2.jpg', alt: 'Unsplashed background img 2' %></div>
+</div>
+
+<div class='container'>
+  <div class='section'>
+    <div class='row'>
+      <div class='col s16 center'>
+        <h3><i class='mdi-content-send brown-text'></i></h3>
+        <h4>Why I Built This</h4>
+        <p class='left-align light center'>I like many of love riding. Every time you want to ride you have to load up your dirtbike, drive to a trail, park somewhere rediculouse, have your fun, then have to load it back up and do it all over again. Why not throw some legal lights on it and not have to deal with a ton of state inspections to be legal and insured. I completed this and it gave me hours of joy on my dirtbike. I hope the same to you. Please donate as your heart desires.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='teal center about'>
+  <div class='row'>
+    <div class='col l6 s12'>
+      <h5 class='white-text'>About Me</h5>
+      <p class='grey-text text-lighten-4'>I am a developer living in Portland, OR that loves to build cool tool/gadgets. I love riding, hiking, and anything outdoors. Please donate to keep this site up and to get more riders on the trails. Any amount would help support and continue development and is greatly appreciated</p>
+    </div>
+    <div class='col l6 s12 center'>
+      <h5 class='white-text'>Donate</h5>
+      <br>
+      <%= link_to 'Donate', 'https://cash.me/$DanielDanilyuk', class: 'btn-large waves-effect waves-light green lighten-1', id: 'download-button', target: '_blank' %>
+    </div>
+  </div>
+</div>
