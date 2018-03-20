@@ -4,7 +4,7 @@ RailsAdmin.config do |config|
 
   ## == Devise ==
   config.authenticate_with do
-    if current_user.admin?
+    if current_user.admin == true
       warden.authenticate! scope: :user
     else 
       redirect_to '/users/sign_in'
