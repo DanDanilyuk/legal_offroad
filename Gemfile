@@ -28,7 +28,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'pry'
 gem 'pdf-forms'
 gem 'cliver'
 # Use Capistrano for deployment
@@ -39,6 +38,7 @@ gem 'materialize-sass'
 gem 'rails_admin'
 # User Logins with Devise
 gem 'devise'
+gem "haml-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
