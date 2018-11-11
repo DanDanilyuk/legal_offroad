@@ -9,7 +9,7 @@ RailsAdmin.config do |config|
         warden.authenticate! scope: :user
       end
     else 
-      redirect_to '/users/sign_in'
+      redirect_to '/admin'
     end
   end
   config.current_user_method(&:current_user)
