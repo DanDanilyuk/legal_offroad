@@ -17,7 +17,7 @@
 //= require jquery_ujs
 //= require materialize
 $(document).on('turbolinks:load', function() {
-    $('select').material_select();
-    $('.button-collapse').sideNav();
+    $('select').dropdown();
+    $('.sidenav').sidenav();
     $('.parallax').parallax();
 });
