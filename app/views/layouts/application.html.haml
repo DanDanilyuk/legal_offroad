@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Legal Off-Road
+    = favicon_link_tag 'tab_icon.png'
+    = csrf_meta_tags
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = stylesheet_link_tag    'application', media: 'screen,projection', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.white{:role => "navigation"}
+      .nav-wrapper.container
+        = link_to 'Legal Off-Road', root_path, class: 'brand-logo', id: 'logo-container'
+        .hide-on-small-only
+          %ul.right
+            %li= link_to 'Form', create_path
+            %li= link_to 'Donate', 'https://cash.me/$DanielDanilyuk', target: '_blank'
+            %li= mail_to "dandanilyuk@gmail.com", 'Contact'
+        .hide-on-med-and-up
+          %ul#slide-out.sidenav
+            %li= link_to 'Form', create_path
+            %li= link_to 'Donate', 'https://cash.me/$DanielDanilyuk', target: '_blank'
+            %li= mail_to "dandanilyuk@gmail.com", 'Contact'
+          %a.button-collapse.sidenav-trigger{"data-target" => "slide-out", :href => "#"}
+            %i.material-icons menu
+    .container
+      - flash.each do |key, value|
+        .alert.alert-info.alert-dismissible.fade.show{:role => "alert"}
+          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+          = value
+      = yield
+  %footer.page-footer.teal
+    .footer-copyright
+      .container.center
+        Made by
+        %a.brown-text.text-lighten-3{:href => "http://www.dandanilyuk.com"} Dan Danilyuk
