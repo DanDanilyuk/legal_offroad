@@ -1,11 +1,11 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title Legal Off-Road
     = favicon_link_tag 'tab_icon.png'
     = csrf_meta_tags
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = stylesheet_link_tag    'application', media: 'screen,projection', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
@@ -19,10 +19,11 @@
             %li= mail_to "dandanilyuk@gmail.com", 'Contact'
         .hide-on-med-and-up
           %ul#slide-out.sidenav
+            %li= link_to 'Home', root_path
             %li= link_to 'Form', create_path
             %li= link_to 'Donate', 'https://cash.me/$DanielDanilyuk', target: '_blank'
             %li= mail_to "dandanilyuk@gmail.com", 'Contact'
-          %a.button-collapse.sidenav-trigger{"data-target" => "slide-out", :href => "#"}
+          = link_to root_path, class: "button-collapse sidenav-trigger",id: "test-button", "data-target" => "slide-out" do
             %i.material-icons menu
     .container
       - flash.each do |key, value|

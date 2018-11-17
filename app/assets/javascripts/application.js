@@ -16,8 +16,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
-$(document).on('turbolinks:load', function() {
-    $('select').dropdown();
+$(document).on('turbolinks:load', function () {
+    Waves.displayEffect();
+    $('select').formSelect();
     $('.sidenav').sidenav();
     $('.parallax').parallax();
+});
+
+$(document).on('turbolinks:before-cache', function () {
+    $('.sidenav').sidenav('destroy');
 });
