@@ -16,6 +16,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
+//= require checkout
 $(document).on('turbolinks:load', function () {
     Waves.displayEffect();
     $('select').formSelect();

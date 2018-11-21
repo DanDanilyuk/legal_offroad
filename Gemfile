@@ -40,6 +40,7 @@ gem 'materialize-sass'
 gem 'rails_admin'
 # User Logins with Devise
 gem 'devise'
+# Use haml for views
 gem "haml-rails"
 
 group :development, :test do
