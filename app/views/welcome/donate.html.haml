@@ -1,0 +1,57 @@
+#index-banner.parallax-container
+  .section.no-pad-bot
+    .container
+      %br
+      %br
+      %h1.header.center.teal-text.text-lighten-2 Register Your Bike
+      .row.center
+        %h5.header.col.s12.light Fill out a simple form to get a street legal dirtbike or atv title.
+      
+      %br
+      %br
+  .parallax= image_tag 'background3.jpg', alt: 'Unsplashed background img 1'
+.container
+  .section
+    .row
+      .col.s16.center
+        %h3
+          %i.mdi-content-send.brown-text
+        %h4 Please Donate
+        %p.left-align.light.center Please donate to keep Legal Off-Road up and running. It is a free service (others charge hundreds) and we will keep it free as long as we can. Even a small donation of 5$ is greatly appreciated.
+      .row.center
+        %form#myForm
+          Enter Donation amount: 
+          %input#amountInDollars{:type => "text"}
+          %button#customButton.btn-large.waves-effect.waves-light.teal.lighten-1
+            Donate
+
+:javascript 
+  $(document).on('turbolinks:load', function () {
+    initStripe();
+  });
+
+  function initStripe() {
+    alert("#{ENV['PUBLISHABLE_KEY']}");
+    var handler = StripeCheckout.configure({
+        key: "#{ENV['PUBLISHABLE_KEY']}",
+        image: '',
+        token: function (token) {
+            $("#stripeToken").val(token.id);
+            $("#stripeEmail").val(token.email);
+            $("#amountInCents").val(Math.floor($("#amountInDollars").val() * 100));
+            $("#myForm").submit();
+        }
+    });
+
+    $('#customButton').on('click', function (e) {
+        var amountInCents = Math.floor($("#amountInDollars").val() * 100);
+        var displayAmount = parseFloat(Math.floor($("#amountInDollars").val() * 100) / 100).toFixed(2);
+        // Open Checkout with further options
+        handler.open({
+            name: 'Donate to Legal Off-Road',
+            description: 'Custom amount ($' + displayAmount + ')',
+            amount: amountInCents,
+        });
+        e.preventDefault();
+    });
+  }
