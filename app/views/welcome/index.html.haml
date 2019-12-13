@@ -57,4 +57,10 @@
     .col.l6.s12.center
       %h5.white-text Donate
       %br
-      = link_to 'Donate', 'https://cash.me/$DanielDanilyuk', class: 'btn-large waves-effect waves-light green lighten-1', id: 'download-button', target: '_blank'
+      %form{action: 'https://www.paypal.com/cgi-bin/webscr', method: 'post', target: '_blank'}
+        %input{name: 'cmd', type: 'hidden', value: '_donations'}
+        %input{name: 'business', type: 'hidden', value: 'KVHNU3QL5C2HN'}
+        %input{name: 'item_name', type: 'hidden', value: 'Legal Off-Road'}
+        %input{name: 'currency_code', type: 'hidden', value: 'USD'}
+        %button.btn-large.waves-effect.waves-light.green.lighten-1{type: 'submit'}
+          Donate
